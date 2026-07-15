@@ -1,0 +1,45 @@
+.modalOverLay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.modalWrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  overflow: auto;
+}
+
+.closeIcon {
+  position: absolute;
+  top: 6%;
+  right: 3%;
+}
+.titleContainer {
+  position: relative;
+  margin-block: 20px;
+}
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-block: 10px;
+  text-align: center;
+}
+
+.textUnderline {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  background: var(--primary-bg-color);
+  width: 75px;
+  height: 3px;
+  transform: translate(-50%, -50%);
+}

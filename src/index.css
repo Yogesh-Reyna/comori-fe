@@ -1,0 +1,82 @@
+body {
+  margin: 0 auto;
+  font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  padding: 0;
+}
+
+.light-theme {
+  /* --primary-bg-color: #30bdcb;
+  --primary-bg-fade-color: #ccfaff; */
+  --primary-bg-color: #026a26;
+  --primary-bg-fade-color: #cfffe0;
+  --primary-font-color: #4a4759;
+}
+
+figure {
+  margin: 0;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.errorMessage {
+  color: #ff2e2e;
+  font-size: 12px;
+  font-weight: 400;
+  margin: 0 0 0 10px;
+  text-align: left;
+}
+
+.container {
+  border-radius: 6px;
+  padding: 20px;
+  background: white;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+input[type="date"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  &::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+  }
+  &::-moz-appearance-calendar-picker-indicator {
+    cursor: pointer;
+  }
+}
+
+input[type="time"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  &::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+  }
+  &::-moz-appearance-calendar-picker-indicator {
+    cursor: pointer;
+  }
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+}

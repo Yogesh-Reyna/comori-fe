@@ -1,0 +1,43 @@
+@import "../../../styles/variables";
+
+.radioLabel {
+  font-size: 14px;
+  font-weight: 400;
+  color: #000000;
+  text-transform: capitalize;
+}
+.customRadio {
+  left: -0.5rem;
+  top: 0.25rem;
+  cursor: pointer;
+  width: 1.125rem;
+  height: 1.125rem;
+  background: #ececec;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+}
+
+.customRadio::after {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  background: #ececec;
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.radioInput {
+  visibility: hidden;
+  margin: 0;
+}
+.radioInput:checked + .customRadio {
+  background: var(--primary-bg-color);
+}
+.radioInput:checked + .customRadio::after {
+  opacity: 1;
+}

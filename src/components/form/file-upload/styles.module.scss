@@ -1,0 +1,68 @@
+.fileUploadContainer {
+  border: 2px dashed var(--primary-bg-color);
+  border-radius: 6px;
+  padding: 20px;
+  min-height: 70px;
+  max-height: 100px;
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.uploadWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  cursor: pointer;
+  p {
+    margin: 0;
+  }
+}
+.fileSize {
+  font-size: 14px;
+  text-align: center;
+  color: #74788d;
+}
+.chooseFile {
+  font-size: 18px;
+  text-align: center;
+  font-weight: 600px;
+  color: #2d3748;
+  padding-bottom: 3px;
+}
+.choose {
+  color: var(--primary-bg-color);
+}
+.imageWrapper {
+  width: 80%;
+  margin: auto;
+  position: relative;
+  audio {
+    width: 100%;
+  }
+}
+.closeIcon {
+  position: absolute;
+  top: 0;
+  right: -10%;
+}
+
+.extraTexts {
+  font-size: 12px;
+  font-weight: 400;
+  color: #5b73e8;
+  margin: 0;
+}
+
+.fileInfoStyle {
+  font-size: 12px;
+  font-weight: 400px;
+  color: #5b73e8;
+  margin: 0px;
+}
+
+// .mainContainer{
+//   // min-height: 70px;
+//   max-height: 100px;
+// }

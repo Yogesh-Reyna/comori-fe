@@ -1,0 +1,61 @@
+.toolTipContainer {
+  position: relative;
+  cursor: pointer;
+  width: max-content;
+}
+
+.toolTipWrapper {
+  position: absolute;
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 12px;
+  width: 200px;
+  box-shadow: 4px 4px 20px 0px #00000026;
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transform: translateY(-50%);
+  text-wrap: wrap;
+  overflow: auto;
+  margin-left: 6px;
+  z-index: 10;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #e3e2e2;
+    border-radius: 10px;
+    height: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 10px;
+  }
+}
+
+.toolTipWrapper {
+  font-size: 12px;
+}
+
+.toolTipWrapper::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -11%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 18px solid transparent;
+  border-right: 18px solid white;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+.toolTipContainer:hover .toolTipWrapper {
+  visibility: visible;
+  opacity: 1;
+}

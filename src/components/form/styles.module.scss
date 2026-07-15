@@ -1,0 +1,157 @@
+.fieldContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.label {
+  display: flex;
+  font-weight: 500;
+  gap: 2px;
+  color: #74788d;
+}
+
+.inputContainer {
+  color: #74788d;
+  border: 1px solid #e3e7ec;
+  padding: 10px;
+  border-radius: 6px;
+  background: #f9fafb;
+}
+
+.searchInput {
+  color: #74788d;
+  border: 1px solid #f9fafb;
+  padding: 10px;
+  border-radius: 6px;
+  background: #f9fafb;
+}
+
+.input {
+  border: none;
+  outline: none;
+  width: 100%;
+  background: #f9fafb;
+  font-size: 14px;
+  font-weight: 400;
+  color: #74788d;
+
+  // &::placeholder {
+  //   font-weight: 600;
+  //   color: #959595;
+  // }
+}
+
+.textArea {
+  outline: none;
+  min-height: 60px;
+}
+
+.inlineIcons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  .input {
+    width: 92%;
+  }
+}
+
+.requiredField {
+  font-size: 16px;
+  color: #f01717;
+}
+
+.inputWid {
+  width: 100% !important;
+  height: 48px !important;
+  border-radius: 10px !important;
+}
+
+.disabledField {
+  background: #f3f3f3 !important;
+}
+
+.disabled {
+  background: rgba(239, 239, 239, 0.3);
+}
+
+.labelInlineItems {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+textarea {
+  resize: none;
+}
+
+// CHECKBOX
+
+.checkboxLabel {
+  font-size: 14px;
+  font-weight: 400px;
+  color: var(--primary-font-color);
+  text-transform: capitalize;
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.customCheckbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 22px;
+  width: 22px;
+  border-radius: 6px;
+  background-color: #ececec;
+}
+.checkboxInput {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.checkboxLabel:hover .checkboxInput ~ .customCheckbox {
+  background-color: #ececec;
+}
+.checkboxLabel .checkboxInput:checked ~ .customCheckbox {
+  background-color: var(--primary-bg-color);
+  padding: 0.5px;
+}
+.customCheckbox:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.checkboxLabel .checkboxInput:checked ~ .customCheckbox:after {
+  display: block;
+}
+.checkboxLabel .customCheckbox:after {
+  left: 9px;
+  top: 3px;
+  width: 5px;
+  height: 11px;
+  border: solid #ffffff;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.ml4 {
+  margin-left: 4px;
+}
+
+.extraTexts {
+  font-size: 12px;
+  font-weight: 400;
+  color: #5b73e8;
+  margin: 0;
+}

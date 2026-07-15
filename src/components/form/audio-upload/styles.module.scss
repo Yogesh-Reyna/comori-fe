@@ -1,0 +1,20 @@
+@import "../../../styles/variables";
+
+.fileContainer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 40%;
+}
+.multiFileContainer {
+  @include gridColumn(3);
+  width: 100%;
+}
+.column3 {
+  width: 100%;
+}
+.audiofileStyle {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}

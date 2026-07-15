@@ -1,0 +1,73 @@
+.fileUploadContainer {
+  min-height: 70px;
+  max-height: 500px;
+  overflow: auto;
+  border: 2px dashed var(--primary-bg-color);
+  border-radius: 6px;
+  padding: 20px 0px;
+}
+
+.audioUploadContainer {
+  max-height: 500px;
+  overflow: auto;
+}
+.fileUploadFiled {
+  width: 100%;
+  min-height: 70px;
+  max-height: 500px;
+  overflow: auto;
+}
+.uploadWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  cursor: pointer;
+  p {
+    margin: 0;
+  }
+}
+.chooseFile {
+  font-size: 18px;
+  text-align: center;
+  font-weight: 600px;
+  color: #2d3748;
+  padding-bottom: 3px;
+}
+.choose {
+  color: var(--primary-bg-color);
+}
+.extraTexts {
+  font-size: 12px;
+  font-weight: 400;
+  color: #5b73e8;
+  margin: 0;
+}
+.fileItemContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 2px 20px;
+  border: 1px dashed var(--primary-bg-color);
+}
+.fileNameTxt {
+  font-size: 14px;
+  font-weight: 600px;
+  color: #2d3748;
+}
+.sizeText {
+  font-size: 12px;
+  font-weight: 800px;
+  color: #74788d;
+}
+.iconContainer {
+  display: flex;
+  gap: 20px;
+}
+
+.subTitle {
+  font-size: 14px;
+  text-align: center;
+  color: #74788d;
+}
