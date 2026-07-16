@@ -1,0 +1,85 @@
+@use "../../styles/abstracts" as *;
+@use "./typography" as *;
+
+:root {
+  // Action / Interactive Colors
+
+  --primary: #{$primary};
+  --primary-hover: #{$primary-hover};
+
+  // Brand / Legacy Support
+
+  --primary-bg-color: #{$primary};
+  --primary-bg-fade-color: #{$green-50};
+
+  // Text Colors
+
+  --text-primary: #{$text-primary};
+  --text-secondary: #{$text-secondary};
+  --text-inverse: #{$text-inverse};
+  --primary-font-color: #{$text-primary};
+
+  // Background Colors
+
+  --background-primary: #{$background-primary};
+  --background-secondary: #{$background-secondary};
+  --bg-surface: #{$background-surface};
+
+  // Border Colors
+
+  --border-primary: #{$border-primary};
+
+  // bg default
+
+  --bg-default: #{$bg-default};
+  --border-default: #{$border-default};
+}
+
+body {
+  font-family: $font-body;
+  color: var(--text-primary);
+  background: var(--background-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Error message
+
+.errorMessage {
+  color: $red-500;
+  font-size: $font-xs;
+  font-weight: $font-regular;
+  margin-left: $spacing-3;
+  text-align: left;
+}
+
+// Common container
+
+.container {
+  background: $white;
+  border-radius: $radius-sm;
+  padding: $spacing-5;
+}
+
+// Date and time inputs
+
+input[type="date"],
+input[type="time"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  &::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+  }
+}
+
+// Remove number arrows
+
+input[type="number"] {
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}

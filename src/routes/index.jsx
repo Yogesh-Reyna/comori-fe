@@ -33,6 +33,14 @@ export const routesData = [
     ],
   },
   {
+    path: "/style-guide",
+    element: (
+      <ErrorBoundary fallback={<>Something went wrong....</>}>
+        <lazy.LazyStyleGuide />
+      </ErrorBoundary>
+    ),
+  },
+  {
     path: "*",
     element: <>page Not found</>,
   },

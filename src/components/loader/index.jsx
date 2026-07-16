@@ -1,5 +1,5 @@
 function Loader() {
-  return <>Loading...</>
+  return <>Loading...</>;
 }
 
-export default Loader
+export default Loader;

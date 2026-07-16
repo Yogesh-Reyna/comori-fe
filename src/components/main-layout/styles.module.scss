@@ -1,0 +1,23 @@
+@use "../../styles" as *;
+
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--background-primary);
+}
+
+.body {
+  flex: 1;
+  display: flex;
+}
+
+.content {
+  background: var(--bg-surface);
+  flex: 1;
+  padding: $spacing-6;
+
+  @include md {
+    padding: $spacing-8;
+  }
+}

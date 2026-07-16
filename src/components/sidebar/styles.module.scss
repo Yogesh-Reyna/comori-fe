@@ -1,0 +1,95 @@
+@use "../../styles" as *;
+
+.sidebar {
+  position: fixed;
+
+  top: 0;
+
+  left: 0;
+
+  height: 100vh;
+
+  width: 18rem;
+
+  background: $white;
+
+  padding: $spacing-6;
+
+  transform: translateX(-100%);
+
+  transition: $transition-base;
+
+  z-index: $z-modal;
+
+  @include lg {
+    display: none;
+  }
+}
+
+.open {
+  transform: translateX(0);
+}
+
+.overlay {
+  position: fixed;
+
+  inset: 0;
+
+  background: $black-alpha-500;
+
+  @include lg {
+    display: none;
+  }
+}
+
+.close {
+  position: absolute;
+
+  right: $spacing-4;
+
+  top: $spacing-4;
+
+  border: none;
+
+  background: none;
+
+  font-size: 1.5rem;
+}
+
+.item {
+  padding-block: $spacing-3;
+
+  font-size: $font-sm;
+
+  cursor: pointer;
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+.bottom {
+  position: absolute;
+
+  bottom: $spacing-6;
+
+  left: $spacing-6;
+
+  right: $spacing-6;
+
+  text-align: center;
+
+  font-size: $font-xs;
+
+  color: var(--text-secondary);
+}
+
+.certificates {
+  margin-block: $spacing-4;
+}
+
+.links {
+  padding-block: $spacing-3;
+
+  border-top: 1px solid var(--border-primary);
+}

@@ -1,10 +1,12 @@
+@use "../../styles" as *;
+
 .modalOverLay {
   position: fixed;
   top: 0;
   bottom: 0;
   right: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba($black, 0.6);
 }
 
 .modalWrapper {
@@ -12,34 +14,43 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
+  background: var(--background-primary);
+  padding: $spacing-5;
+  border-radius: $radius-xl;
   overflow: auto;
+  box-shadow: $shadow-lg;
 }
 
 .closeIcon {
   position: absolute;
   top: 6%;
   right: 3%;
+  color: var(--text-secondary);
+  cursor: pointer;
 }
+
 .titleContainer {
   position: relative;
-  margin-block: 20px;
+  margin-block: $spacing-5;
 }
+
 .title {
-  font-size: 24px;
-  font-weight: 600;
-  margin-block: 10px;
+  @include headingSmall(
+    $fontSize: $font-xl,
+    $fontWeight: $font-semibold
+  );
+
+  margin-block: $spacing-3;
   text-align: center;
 }
 
 .textUnderline {
   position: absolute;
-  bottom: -10px;
+  bottom: -$spacing-2;
   left: 50%;
   background: var(--primary-bg-color);
-  width: 75px;
-  height: 3px;
+  width: 4.6875rem; // 75px
+  height: 0.1875rem; // 3px
   transform: translate(-50%, -50%);
+  border-radius: $radius-full;
 }

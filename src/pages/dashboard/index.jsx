@@ -7,6 +7,8 @@ import { closeModal, openModal } from "../../zustand-store/modal-store/actions";
 
 function Dashboard() {
   const [name, setName] = useState("");
+  const unusedVariable = "hello";
+
   return (
     <div>
       <Input

@@ -1,0 +1,41 @@
+@use "../../styles" as *;
+
+.footer {
+  padding: $spacing-5;
+
+  text-align: center;
+
+  font-size: $font-xs;
+
+  color: var(--text-secondary);
+
+  border-top: $border-width-sm solid var(--border-primary);
+}
+
+.compliance {
+  margin-bottom: $spacing-3;
+
+  color: $primary;
+}
+
+.certificates {
+  margin-bottom: $spacing-4;
+}
+
+.links {
+  display: flex;
+
+  justify-content: center;
+
+  gap: $spacing-5;
+
+  padding-block: $spacing-3;
+
+  border-top: $border-width-sm solid var(--border-primary);
+
+  a {
+    cursor: pointer;
+
+    color: $primary;
+  }
+}

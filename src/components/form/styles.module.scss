@@ -1,75 +1,79 @@
+@use "../../styles" as *;
+
 .fieldContainer {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: $spacing-1;
 }
 
 .label {
   display: flex;
-  font-weight: 500;
-  gap: 2px;
-  color: #74788d;
+  align-items: center;
+  font-weight: $font-medium;
+  gap: $spacing-1;
+  color: var(--text-secondary);
 }
 
 .inputContainer {
-  color: #74788d;
-  border: 1px solid #e3e7ec;
-  padding: 10px;
-  border-radius: 6px;
-  background: #f9fafb;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-default);
+  padding: $spacing-3;
+  border-radius: $radius-base;
+  background: var(--bg-default);
 }
 
 .searchInput {
-  color: #74788d;
-  border: 1px solid #f9fafb;
-  padding: 10px;
-  border-radius: 6px;
-  background: #f9fafb;
+  color: var(--text-secondary);
+  border: 1px solid var(--background-secondary);
+  padding: $spacing-3;
+  border-radius: $radius-md;
+  background: var(--background-secondary);
 }
 
 .input {
   border: none;
   outline: none;
   width: 100%;
-  background: #f9fafb;
-  font-size: 14px;
-  font-weight: 400;
-  color: #74788d;
+  background: transparent;
+  font-size: $font-md;
+  font-weight: $font-medium;
+  color: var(--text-secondary);
 
-  // &::placeholder {
-  //   font-weight: 600;
-  //   color: #959595;
-  // }
+  &::placeholder {
+    color: var(--primary);
+  }
 }
 
 .textArea {
   outline: none;
   min-height: 60px;
+  resize: none;
 }
 
 .inlineIcons {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 5px;
+  gap: $spacing-1;
+
   .input {
     width: 92%;
   }
 }
 
 .requiredField {
-  font-size: 16px;
-  color: #f01717;
+  font-size: $font-md;
+  color: var(--color-error);
 }
 
 .inputWid {
   width: 100% !important;
   height: 48px !important;
-  border-radius: 10px !important;
+  border-radius: $radius-xl !important;
 }
 
 .disabledField {
-  background: #f3f3f3 !important;
+  background: var(--background-secondary) !important;
 }
 
 .disabled {
@@ -82,35 +86,30 @@
   align-items: center;
 }
 
-textarea {
-  resize: none;
-}
-
 // CHECKBOX
 
 .checkboxLabel {
-  font-size: 14px;
-  font-weight: 400px;
+  font-size: $font-sm;
+  font-weight: $font-regular;
   color: var(--primary-font-color);
   text-transform: capitalize;
   display: block;
   position: relative;
   padding-left: 35px;
   cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
+
 .customCheckbox {
   position: absolute;
   top: 0;
   left: 0;
   height: 22px;
   width: 22px;
-  border-radius: 6px;
-  background-color: #ececec;
+  border-radius: $radius-md;
+  background-color: var(--border-primary);
 }
+
 .checkboxInput {
   position: absolute;
   opacity: 0;
@@ -118,40 +117,46 @@ textarea {
   height: 0;
   width: 0;
 }
+
 .checkboxLabel:hover .checkboxInput ~ .customCheckbox {
-  background-color: #ececec;
+  background-color: var(--border-primary);
 }
+
 .checkboxLabel .checkboxInput:checked ~ .customCheckbox {
-  background-color: var(--primary-bg-color);
+  background-color: var(--primary);
+
   padding: 0.5px;
 }
+
 .customCheckbox:after {
   content: "";
   position: absolute;
   display: none;
 }
+
 .checkboxLabel .checkboxInput:checked ~ .customCheckbox:after {
   display: block;
 }
+
 .checkboxLabel .customCheckbox:after {
   left: 9px;
   top: 3px;
   width: 5px;
   height: 11px;
-  border: solid #ffffff;
+  border: solid var(--text-inverse);
   border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 
+// Utilities
+
 .ml4 {
-  margin-left: 4px;
+  margin-left: $spacing-1;
 }
 
 .extraTexts {
-  font-size: 12px;
-  font-weight: 400;
-  color: #5b73e8;
+  font-size: $font-xs;
+  font-weight: $font-regular;
+  color: var(--primary);
   margin: 0;
 }

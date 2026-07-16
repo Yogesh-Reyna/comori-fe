@@ -1,0 +1,33 @@
+// Border Tokens
+
+$border-width-none: 0px;
+
+$border-width-sm: 1px;
+
+$border-width-md: 2px;
+
+$border-width-lg: 4px;
+
+// Z-Index Tokens
+
+$z-base: 1;
+
+$z-dropdown: 1000;
+
+$z-sticky: 1100;
+
+$z-modal: 1200;
+
+$z-popover: 1300;
+
+$z-tooltip: 1400;
+
+$z-loader: 1500;
+
+// Transition Tokens
+
+$transition-fast: 150ms ease;
+
+$transition-base: 250ms ease;
+
+$transition-slow: 400ms ease;

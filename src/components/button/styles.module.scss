@@ -1,20 +1,27 @@
-@use "../../styles/variables" as *;
+@use "../../styles" as *;
 
 .btnContainer {
-  border-radius: 6px;
-  text-align: center;
-  padding: 10px 16px;
+  height: max-content;
+  padding: $spacing-3 $spacing-6;
+  border-radius: $radius-full;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-2;
   outline: none;
   border: none;
   cursor: pointer;
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
-  font-size: 16px;
-  font-weight: 500;
-  height: max-content;
+  font-size: $font-md;
+  font-weight: $font-medium;
+  transition: $transition-base;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
 }
+
+// Width Variants
 
 .fullWid {
   width: 100%;
@@ -24,120 +31,67 @@
   width: max-content;
 }
 
+// Primary Button
+
 .primaryBtn {
-  background: var(--primary-bg-color, #026a26);
-  color: white;
+  background: var(--primary);
+  color: var(--text-inverse);
+
+  &:hover {
+    background: var(--primary-hover);
+  }
 }
 
+// Secondary Button
+
 .secondaryBtn {
-  background: white;
-  color: black;
-  border: 1px solid var(--primary-bg-color, #026a26);
-  // &:hover {
-  //   background: var(--theme-color);
-  //   color: var(--tertiary-color);
-  // }
+  background: var(--background-primary);
+  color: var(--primary);
+  border: 1px solid var(--primary);
+
+  &:hover {
+    background: var(--primary);
+    color: var(--text-inverse);
+  }
 }
+
+// Link Wrapper
 
 .link {
   text-decoration: none;
 }
 
-.loader {
-  position: relative;
-  width: 10px;
-  height: 10px;
-  border-radius: 5px;
-  background-color: white;
-  color: white;
-  animation: loader 1s infinite linear;
-  margin: 5px;
-}
-
-.loader::before,
-.loader::after {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  top: 0;
-}
-.loader::before {
-  left: -15px;
-  width: 10px;
-  height: 10px;
-  border-radius: 5px;
-  background-color: white;
-  color: white;
-  animation: loader-before 1s infinite linear;
-}
-.loader::after {
-  left: 15px;
-  width: 10px;
-  height: 10px;
-  border-radius: 5px;
-  background-color: white;
-  color: white;
-  animation: loader-after 1s infinite linear;
-}
+// Border Variant
 
 .isBorder {
-  border: 1px solid #7a7a7a;
-  color: #000000;
-  width: 25%;
+  border: 1px solid var(--border-primary);
+  color: var(--text-primary);
 }
+
+// Extra Padding Variant
 
 .pdBlock {
-  padding: 12px 16px !important;
+  padding-top: $spacing-3;
+  padding-bottom: $spacing-3;
 }
 
-@keyframes loader-before {
-  0% {
-    transform: scale(1, 1);
-  }
-  25% {
-    transform: scale(1, 1.5);
-  }
-  50% {
-    transform: scale(1, 0.67);
-  }
-  75% {
-    transform: scale(1, 1);
-  }
-  100% {
-    transform: scale(1, 1);
-  }
+// Loader
+
+.loader {
+  width: 1rem;
+  height: 1rem;
+  border-radius: $radius-full;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: var(--text-inverse);
+  animation: spin 0.8s linear infinite;
 }
-@keyframes loader {
-  0% {
-    transform: scale(1, 1);
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
   }
-  25% {
-    transform: scale(1, 1);
-  }
-  50% {
-    transform: scale(1, 1.5);
-  }
-  75% {
-    transform: scale(1, 1);
-  }
-  100% {
-    transform: scale(1, 1);
-  }
-}
-@keyframes loader-after {
-  0% {
-    transform: scale(1, 1);
-  }
-  25% {
-    transform: scale(1, 1);
-  }
-  50% {
-    transform: scale(1, 0.67);
-  }
-  75% {
-    transform: scale(1, 1.5);
-  }
-  100% {
-    transform: scale(1, 1);
+
+  to {
+    transform: rotate(360deg);
   }
 }

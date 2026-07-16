@@ -1,0 +1,35 @@
+// Breakpoint Values
+
+$breakpoint-sm: 30rem; // 480px
+
+$breakpoint-md: 48rem; // 768px
+
+$breakpoint-lg: 62rem; // 992px
+
+$breakpoint-xl: 80rem; // 1280px
+
+// Media Query Mixins
+
+@mixin sm {
+  @media (min-width: $breakpoint-sm) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: $breakpoint-md) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: $breakpoint-lg) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: $breakpoint-xl) {
+    @content;
+  }
+}

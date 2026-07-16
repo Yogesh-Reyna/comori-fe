@@ -1,0 +1,54 @@
+// Layout mixins
+
+@mixin gridColumn($columns: 2, $gap: $spacing-5) {
+  display: grid;
+  grid-template-columns: repeat($columns, minmax(0, 1fr));
+  gap: $gap;
+
+  @include md {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @include sm {
+    grid-template-columns: 1fr;
+  }
+}
+
+@mixin flex($justifyContent: center, $alignItems: center, $direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+}
+
+// Visual mixins
+
+@mixin card(
+  $radius: 0.5rem,
+  $padding: 1rem,
+  $background: var(--background-primary)
+) {
+  background: $background;
+  border-radius: $radius;
+  padding: $padding;
+}
+
+// Loader mixin
+
+@mixin skeleton($width: 100%, $height: 1rem) {
+  width: $width;
+  height: $height;
+  border-radius: 999px;
+  background-color: rgba(0, 0, 0, 0.08);
+  animation: skeleton-loading 1.2s ease-in-out infinite alternate;
+
+  @keyframes skeleton-loading {
+    0% {
+      opacity: 0.6;
+    }
+
+    100% {
+      opacity: 0.35;
+    }
+  }
+}
