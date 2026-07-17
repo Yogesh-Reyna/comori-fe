@@ -1,41 +1,101 @@
 @use "../../styles" as *;
 
 .footer {
-  padding: $spacing-5;
+  display: none;
 
-  text-align: center;
+  @include lg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-4;
+    padding: $spacing-0 $spacing-6 $spacing-8;
+    background: var(--bg-primary);
+    border-top: $border-width-sm solid var(--border-primary);
 
-  font-size: $font-xs;
+    @include font($font-xs, $font-regular, var(--text-secondary), $font-body);
+  }
+}
 
-  color: var(--text-secondary);
+// Compliance Section
 
-  border-top: $border-width-sm solid var(--border-primary);
+.complianceSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: $spacing-3;
+  padding: $spacing-3 $spacing-4;
+  border-bottom: 1px solid var(--border-solid, #b9d6cc);
 }
 
 .compliance {
-  margin-bottom: $spacing-3;
+  @include font($font-sm, $font-medium, $primary, $font-body);
 
-  color: $primary;
+  text-align: center;
 }
 
 .certificates {
-  margin-bottom: $spacing-4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: $spacing-3;
+}
+
+.logoWrapper {
+  width: 2.938rem;
+  margin: 0;
+}
+
+.logo {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+//  Legal Section
+
+.legalSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-1;
 }
 
 .links {
   display: flex;
-
+  align-items: center;
   justify-content: center;
 
-  gap: $spacing-5;
-
-  padding-block: $spacing-3;
-
-  border-top: $border-width-sm solid var(--border-primary);
-
   a {
-    cursor: pointer;
+    @include font($font-sm, $font-medium, var(--primary), $font-body);
 
-    color: $primary;
+    line-height: 20px;
+    text-decoration: none;
+    transition: $transition-base;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:not(:last-child) {
+      display: flex;
+      align-items: center;
+
+      &::after {
+        content: "";
+        width: 1px;
+        height: 16px;
+        margin-inline: $spacing-6;
+        background: var(--border-default, #d3e4df);
+      }
+    }
   }
+}
+
+.copyright,
+.version {
+  @include font($font-xs, $font-medium, var(--primary), $font-body);
+
+  line-height: 16px;
+  text-align: center;
 }

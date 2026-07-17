@@ -23,12 +23,48 @@ export const routesData = [
     ),
     children: [
       {
+        index: true,
+        element: <Navigate to="today" replace />,
+      },
+      {
         path: "dashboard",
         element: (
           <ErrorBoundary fallback={<>Something went wrong...</>}>
             <lazy.LazyDashboard />
           </ErrorBoundary>
         ),
+      },
+      {
+        path: "today",
+        handle: {
+          title: "Today",
+          showFooter: true,
+        },
+        element: <>Today</>,
+      },
+      {
+        path: "my-data",
+        handle: {
+          title: "My Data",
+          showFooter: true,
+        },
+        element: <>My Data</>,
+      },
+      {
+        path: "my-meals",
+        handle: {
+          title: "My Meals",
+          showFooter: true,
+        },
+        element: <>My Meals</>,
+      },
+      {
+        path: "knowledge-hub",
+        handle: {
+          title: "Knowledge Hub",
+          showFooter: false,
+        },
+        element: <>Knowledge Hub</>,
       },
     ],
   },

@@ -1,25 +1,62 @@
 @use "../../styles" as *;
 
 .header {
+  position: relative;
   height: 5.25rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: $radius-2xl;
-  padding-inline: $radius-3xl;
-  background: var(--background-primary);
+  padding-inline: $spacing-6;
+  background: var(--bg-primary);
+
+  @include lg {
+    padding: $spacing-6 $spacing-8 $spacing-0 $spacing-8;
+  }
+}
+
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.menuButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  @include lg {
+    display: none;
+  }
 }
 
 .logoWrapper {
-  display: flex;
-  align-items: center;
-  width: 8rem;
+  display: none;
+
+  @include lg {
+    display: flex;
+    align-items: center;
+    width: 9rem;
+  }
 }
 
 .logo {
   width: 100%;
   height: auto;
-  object-fit: contain;
+}
+
+.pageTitle {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  @include font($font-xl, $font-semibold, $font-body);
+
+  @include lg {
+    display: none;
+  }
 }
 
 .navigation {
@@ -27,23 +64,21 @@
 
   @include lg {
     display: flex;
-    height: 60px;
     align-items: center;
+    height: 100%;
   }
 }
 
 .navItem {
-  height: 60px;
+  height: 100%;
   display: flex;
   align-items: center;
-  gap: $spacing-2;
-  padding-inline: $radius-xl;
-  background: none;
-  border: none;
+  gap: 10px;
+  padding-inline: $spacing-4;
+  text-decoration: none;
   border-bottom: 2px solid transparent;
-  cursor: pointer;
-  @include font($font-lg, $font-medium, var(--text-primary), $font-body);
   transition: $transition-base;
+  @include font($font-lg, $font-medium);
 
   &:hover {
     color: $primary;
@@ -51,26 +86,27 @@
 }
 
 .active {
-  border-bottom: 2px solid $primary;
   color: $primary;
+  border-bottom-color: $primary;
 }
 
 .actions {
-  display: flex;
-  gap: $spacing-4;
+  display: none;
 
-  button {
-    border: none;
-    background: none;
-    cursor: pointer;
-    @include font($font-md, $font-medium);
+  @include lg {
+    display: flex;
+    gap: $spacing-4;
   }
 }
 
-.mobileMenu {
-  display: block;
-
-  @include lg {
-    display: none;
-  }
+.iconButton {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: $radius-full;
+  border: 1px solid var(--gray-idle, #d3e4df);
+  background: none;
+  cursor: pointer;
 }

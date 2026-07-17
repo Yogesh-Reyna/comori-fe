@@ -38,7 +38,7 @@ $font-extrabold: 800;
 @mixin font(
   $fontSize: $font-md,
   $fontWeight: $font-regular,
-  $color: var(--text-primary),
+  $color: var(--text-default),
   $fontFamily: $font-body
 ) {
   font-family: $fontFamily;
@@ -52,7 +52,7 @@ $font-extrabold: 800;
 @mixin headingLarge(
   $fontSize: $font-4xl,
   $fontWeight: $font-bold,
-  $color: var(--text-primary)
+  $color: var(--text-deafult)
 ) {
   font-family: $font-heading;
   font-size: $fontSize;
@@ -65,7 +65,7 @@ $font-extrabold: 800;
 @mixin headingSmall(
   $fontSize: $font-2xl,
   $fontWeight: $font-bold,
-  $color: var(--text-primary)
+  $color: var(--text-default)
 ) {
   font-family: $font-heading;
   font-size: $fontSize;
@@ -80,7 +80,7 @@ $font-extrabold: 800;
 @mixin text(
   $fontSize: $font-md,
   $fontWeight: $font-regular,
-  $color: var(--text-primary)
+  $color: var(--text-defaul)
 ) {
   font-family: $font-body;
   font-size: $fontSize;
@@ -92,7 +92,7 @@ $font-extrabold: 800;
 @mixin intertext(
   $fontSize: $font-md,
   $fontWeight: $font-regular,
-  $color: var(--text-primary)
+  $color: var(--text-default)
 ) {
   font-family: $font-ui;
   font-size: $fontSize;

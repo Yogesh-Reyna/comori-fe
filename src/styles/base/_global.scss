@@ -7,23 +7,17 @@
   --primary: #{$primary};
   --primary-hover: #{$primary-hover};
 
-  // Brand / Legacy Support
-
-  --primary-bg-color: #{$primary};
-  --primary-bg-fade-color: #{$green-50};
-
   // Text Colors
 
-  --text-primary: #{$text-primary};
+  --text-default: #{$text-default};
   --text-secondary: #{$text-secondary};
   --text-inverse: #{$text-inverse};
-  --primary-font-color: #{$text-primary};
 
   // Background Colors
 
-  --background-primary: #{$background-primary};
-  --background-secondary: #{$background-secondary};
   --bg-surface: #{$background-surface};
+  --bg-primary: #{$background-primary};
+  --background-secondary: #{$background-secondary};
 
   // Border Colors
 
@@ -37,8 +31,8 @@
 
 body {
   font-family: $font-body;
-  color: var(--text-primary);
-  background: var(--background-primary);
+  color: var(--text-default);
+  background: var(--bg-surface);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

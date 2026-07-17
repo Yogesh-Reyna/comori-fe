@@ -1,5 +1,5 @@
+import { Outlet, useMatches } from "react-router-dom";
 import { useState } from "react";
-import { Outlet } from "react-router-dom";
 
 import Header from "../header";
 import Sidebar from "../sidebar";
@@ -9,6 +9,12 @@ import styles from "./styles.module.scss";
 
 function MainLayout() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const matches = useMatches();
+
+  const currentRoute = matches[matches.length - 1];
+
+  const showFooter = currentRoute?.handle?.showFooter ?? true;
 
   return (
     <div className={styles.layout}>
@@ -25,7 +31,7 @@ function MainLayout() {
         </main>
       </div>
 
-      <Footer />
+      {showFooter && <Footer />}
     </div>
   );
 }

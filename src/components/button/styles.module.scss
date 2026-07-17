@@ -45,7 +45,7 @@
 // Secondary Button
 
 .secondaryBtn {
-  background: var(--background-primary);
+  background: var(--bg-primary);
   color: var(--primary);
   border: 1px solid var(--primary);
 
@@ -65,7 +65,7 @@
 
 .isBorder {
   border: 1px solid var(--border-primary);
-  color: var(--text-primary);
+  color: var(--text-default);
 }
 
 // Extra Padding Variant

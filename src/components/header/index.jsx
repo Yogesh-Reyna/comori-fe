@@ -1,59 +1,58 @@
-import Button from "../button";
+import { NavLink, useLocation } from "react-router-dom";
 import styles from "./styles.module.scss";
-
 import logo from "../../assets/images/logo.png";
-
-// import { CalendarDays, Database, Utensils, BookOpen } from "lucide-react";
+import { navigationItems } from "../../constants/navigation";
+import { MenuIcon, MyAccountIcon, SettingsIcon } from "../svg";
 
 function Header({ onMenuClick }) {
-  const menuItems = [
-    {
-      label: "Today",
-      // icon: CalendarDays,
-    },
-    {
-      label: "My Data",
-      // icon: Database,
-    },
-    {
-      label: "My Meals",
-      // icon: Utensils,
-    },
-    {
-      label: "Knowledge Hub",
-      // icon: BookOpen,
-    },
-  ];
+  const location = useLocation();
+
+  const currentPage =
+    navigationItems.find((item) => item.path === location.pathname)?.label ??
+    "";
 
   return (
     <header className={styles.header}>
-      <div className={styles.mobileMenu}>
-        <Button label="Menu" onClick={onMenuClick} />
+      <div className={styles.left}>
+        <button
+          className={styles.menuButton}
+          onClick={onMenuClick}
+          aria-label="Open menu"
+        >
+          <MenuIcon />
+        </button>
+
+        <figure className={styles.logoWrapper}>
+          <img src={logo} alt="Comori logo" className={styles.logo} />
+        </figure>
       </div>
 
-      <figure className={styles.logoWrapper}>
-        <img src={logo} alt="Comori logo" className={styles.logo} />
-      </figure>
+      <h1 className={styles.pageTitle}>{currentPage}</h1>
 
       <nav className={styles.navigation}>
-        {menuItems?.map(({ label, icon: Icon }) => (
-          <button
+        {navigationItems.map(({ label, path, icon: Icon }) => (
+          <NavLink
             key={label}
-            className={`${styles.navItem} ${
-              label === "Today" ? styles.active : ""
-            }`}
+            to={path}
+            className={({ isActive }) =>
+              `${styles.navItem} ${isActive ? styles.active : ""}`
+            }
           >
-            {/* <Icon size={24} /> */}
+            <Icon size={24} />
 
             <span>{label}</span>
-          </button>
+          </NavLink>
         ))}
       </nav>
 
       <div className={styles.actions}>
-        <button>Profile</button>
+        <button className={styles.iconButton}>
+          <MyAccountIcon />
+        </button>
 
-        <button>Settings</button>
+        <button className={styles.iconButton}>
+          <SettingsIcon />
+        </button>
       </div>
     </header>
   );

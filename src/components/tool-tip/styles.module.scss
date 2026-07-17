@@ -8,7 +8,7 @@
 
 .toolTipWrapper {
   position: absolute;
-  background: var(--background-primary);
+  background: var(--bg-primary);
   border-radius: $radius-md;
   padding: $spacing-3;
   width: 12.5rem; // 200px
@@ -50,7 +50,7 @@
   width: 0;
   height: 0;
   border-left: 1.125rem solid transparent;
-  border-right: 1.125rem solid var(--background-primary);
+  border-right: 1.125rem solid var(--bg-primary);
   border-top: 0.625rem solid transparent;
   border-bottom: 0.625rem solid transparent;
 }

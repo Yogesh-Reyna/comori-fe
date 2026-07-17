@@ -4,7 +4,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: var(--background-primary);
+  background: var(--bg-surface);
 }
 
 .body {
@@ -13,7 +13,6 @@
 }
 
 .content {
-  background: var(--bg-surface);
   flex: 1;
   padding: $spacing-6;
 

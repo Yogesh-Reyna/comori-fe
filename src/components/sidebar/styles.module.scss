@@ -2,24 +2,16 @@
 
 .sidebar {
   position: fixed;
-
   top: 0;
-
   left: 0;
-
   height: 100vh;
-
-  width: 18rem;
-
+  width: 26.25rem;
   background: $white;
-
-  padding: $spacing-6;
-
+  padding: $spacing-8 $spacing-6 $spacing-12;
   transform: translateX(-100%);
-
   transition: $transition-base;
-
   z-index: $z-modal;
+  border-radius: 0 $radius-2xl $radius-2xl 0;
 
   @include lg {
     display: none;
@@ -32,9 +24,7 @@
 
 .overlay {
   position: fixed;
-
   inset: 0;
-
   background: $black-alpha-500;
 
   @include lg {
@@ -44,43 +34,54 @@
 
 .close {
   position: absolute;
-
   right: $spacing-4;
-
   top: $spacing-4;
 
-  border: none;
+  cursor: pointer;
+}
 
-  background: none;
-
-  font-size: 1.5rem;
+.navigation {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-2;
+  margin-top: $spacing-6;
 }
 
 .item {
-  padding-block: $spacing-3;
-
-  font-size: $font-sm;
-
+  display: flex;
+  align-items: center;
+  gap: $spacing-3;
+  width: 100%;
+  padding: $spacing-3 $spacing-4;
+  border: none;
+  background: transparent;
+  text-decoration: none;
+  color: var(--text-default);
   cursor: pointer;
+  @include font($font-lg, $font-regular, var(--text-default), $font-body);
 
   &:hover {
     color: $primary;
   }
 }
 
+.active {
+  color: $primary;
+  background: var(--bg-secondary);
+  border-radius: $radius-md;
+}
+
+h3 {
+  @include headingSmall($font-xl, $font-medium, var(--text-default));
+}
+
 .bottom {
   position: absolute;
-
   bottom: $spacing-6;
-
   left: $spacing-6;
-
   right: $spacing-6;
-
   text-align: center;
-
   font-size: $font-xs;
-
   color: var(--text-secondary);
 }
 
@@ -90,6 +91,5 @@
 
 .links {
   padding-block: $spacing-3;
-
   border-top: 1px solid var(--border-primary);
 }
