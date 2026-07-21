@@ -66,6 +66,94 @@ export const routesData = [
         },
         element: <>Knowledge Hub</>,
       },
+      {
+        path: "my-account",
+        children: [
+          {
+            path: "profile-details",
+            handle: {
+              title: "Profile Details",
+              showFooter: true,
+            },
+            element: <>Profile Details</>,
+          },
+          {
+            path: "your-plan",
+            handle: {
+              title: "Your Plan",
+              showFooter: true,
+            },
+            element: <>Your Plan</>,
+          },
+          {
+            path: "payment-method",
+
+            handle: {
+              title: "Payment Method",
+              showFooter: true,
+            },
+
+            element: <>Payment Method</>,
+          },
+          {
+            path: "payment-history",
+
+            handle: {
+              title: "Payment History",
+              showFooter: true,
+            },
+
+            element: <>Payment History</>,
+          },
+        ],
+      },
+      {
+        path: "settings",
+
+        children: [
+          {
+            path: "date-time",
+
+            handle: {
+              title: "Date & Time",
+              showFooter: true,
+            },
+
+            element: <>Date & Time</>,
+          },
+          {
+            path: "units",
+
+            handle: {
+              title: "Units",
+              showFooter: true,
+            },
+
+            element: <>Units</>,
+          },
+          {
+            path: "notifications",
+
+            handle: {
+              title: "Notifications",
+              showFooter: true,
+            },
+
+            element: <>Notifications</>,
+          },
+
+          {
+            path: "connected-devices",
+
+            handle: {
+              title: "Connected Devices",
+              showFooter: true,
+            },
+
+            element: <>Connected Devices</>,
+          },
+        ],
+      },
     ],
   },
   {

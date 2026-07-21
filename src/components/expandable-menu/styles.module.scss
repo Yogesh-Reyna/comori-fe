@@ -1,0 +1,325 @@
+@use "../../styles" as *;
+
+
+
+.wrapper {
+
+  position:relative;
+
+  width:100%;
+
+}
+
+
+
+/* ===============================
+   Parent Button
+================================ */
+
+
+.parentButton {
+
+
+  display:flex;
+
+  align-items:center;
+
+
+  gap:$spacing-3;
+
+
+  width:100%;
+
+
+  padding:$spacing-3 $spacing-4;
+
+
+  border:none;
+
+  background:transparent;
+
+
+  cursor:pointer;
+
+
+  color:var(--text-default);
+
+
+
+  @include font(
+    $font-lg,
+    $font-regular,
+    var(--text-default),
+    $font-body
+  );
+
+
+
+  transition:$transition-base;
+
+
+
+  &:hover {
+
+    color:$primary;
+
+  }
+
+}
+
+
+
+
+
+/* ===============================
+   Header Icon Only
+================================ */
+
+
+.iconOnly {
+
+
+  width:40px;
+
+  height:40px;
+
+
+  justify-content:center;
+
+
+  padding:0;
+
+
+  border-radius:$radius-full;
+
+
+  border:
+
+    1px solid var(--gray-idle,#d3e4df);
+
+
+
+}
+
+
+
+/* ===============================
+   Children Wrapper
+================================ */
+
+
+.children {
+
+
+  max-height:0;
+
+
+  overflow:hidden;
+
+
+  opacity:0;
+
+
+
+  transition:
+
+    max-height .35s ease,
+
+    opacity .25s ease;
+
+
+
+}
+
+
+
+.childrenOpen {
+
+
+  max-height:600px;
+
+
+  opacity:1;
+
+
+}
+
+
+
+
+
+/* ===============================
+   Child Item
+================================ */
+
+
+.childButton {
+
+
+  display:flex;
+
+
+  align-items:center;
+
+
+  gap:$spacing-3;
+
+
+
+  width:100%;
+
+
+  padding:$spacing-3 $spacing-4;
+
+
+  border:none;
+
+
+  background:transparent;
+
+
+  cursor:pointer;
+
+
+  text-decoration:none;
+
+
+
+  color:var(--text-secondary);
+
+
+
+  @include font(
+    $font-md,
+    $font-regular,
+    var(--text-secondary),
+    $font-body
+  );
+
+
+
+  transition:$transition-base;
+
+
+
+
+  &:hover {
+
+
+    color:$primary;
+
+
+    background:var(--bg-secondary);
+
+
+  }
+
+
+}
+
+
+
+
+
+.activeChild {
+
+
+  color:$primary;
+
+
+  background:var(--bg-secondary);
+
+
+  border-radius:$radius-md;
+
+
+}
+
+
+
+
+
+/* ===============================
+   Sidebar Accordion Variant
+================================ */
+
+
+.accordion {
+
+
+  .childButton {
+
+
+    width:calc(100% - 32px);
+
+
+    margin-left:$spacing-8;
+
+
+  }
+
+
+}
+
+
+
+
+
+/* ===============================
+   Header Dropdown Variant
+================================ */
+
+
+.dropdown {
+
+
+
+  .children {
+
+
+    position:absolute;
+
+
+    top:48px;
+
+
+    right:0;
+
+
+
+    width:240px;
+
+
+
+    background:$white;
+
+
+
+    border-radius:$radius-lg;
+
+
+
+    box-shadow:
+
+      0 10px 30px rgba(0,0,0,.12);
+
+
+
+    z-index:$z-dropdown;
+
+
+  }
+
+
+
+  .childButton {
+
+
+    margin-left:0;
+
+
+  }
+
+
+
+}

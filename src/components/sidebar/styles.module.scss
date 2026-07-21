@@ -6,12 +6,15 @@
   left: 0;
   height: 100vh;
   width: 26.25rem;
+  display: flex;
+  flex-direction: column;
   background: $white;
   padding: $spacing-8 $spacing-6 $spacing-12;
   transform: translateX(-100%);
   transition: $transition-base;
   z-index: $z-modal;
   border-radius: 0 $radius-2xl $radius-2xl 0;
+  overflow: hidden;
 
   @include lg {
     display: none;
@@ -36,7 +39,6 @@
   position: absolute;
   right: $spacing-4;
   top: $spacing-4;
-
   cursor: pointer;
 }
 
@@ -45,6 +47,18 @@
   flex-direction: column;
   gap: $spacing-2;
   margin-top: $spacing-6;
+  flex: 1;
+  overflow-y: auto;
+  padding-right: $spacing-2;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--border-primary);
+    border-radius: 10px;
+  }
 }
 
 .item {
@@ -76,13 +90,13 @@ h3 {
 }
 
 .bottom {
-  position: absolute;
-  bottom: $spacing-6;
-  left: $spacing-6;
-  right: $spacing-6;
-  text-align: center;
-  font-size: $font-xs;
-  color: var(--text-secondary);
+  flex-shrink:0;
+  margin-top:$spacing-4;
+  padding-top:$spacing-4;
+  text-align:center;
+  font-size:$font-xs;
+  color:var(--text-secondary);
+  border-top:1px solid var(--border-primary);
 }
 
 .certificates {
@@ -93,3 +107,5 @@ h3 {
   padding-block: $spacing-3;
   border-top: 1px solid var(--border-primary);
 }
+
+
