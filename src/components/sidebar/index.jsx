@@ -1,13 +1,12 @@
 import { useRef } from "react";
 import { NavLink } from "react-router-dom";
-
 import styles from "./styles.module.scss";
-
 import { CloseIcon } from "../svg";
 import { navigationItems } from "../../constants/navigation";
 import ExpandableMenu from "../expandable-menu";
+import Footer from "../footer";
 
-function Sidebar({ isOpen, onClose }) {
+const Sidebar = ({ isOpen, onClose }) => {
   const navigationRef = useRef(null);
 
   return (
@@ -16,7 +15,6 @@ function Sidebar({ isOpen, onClose }) {
 
       <aside className={`${styles.sidebar} ${isOpen ? styles.open : ""}`}>
         <CloseIcon className={styles.close} onClick={onClose} />
-
         <h3>Good Morning Daniel!</h3>
 
         <nav ref={navigationRef} className={styles.navigation}>
@@ -32,9 +30,7 @@ function Sidebar({ isOpen, onClose }) {
                 />
               );
             }
-
             const Icon = item.icon;
-
             return (
               <NavLink
                 key={item.label}
@@ -45,29 +41,18 @@ function Sidebar({ isOpen, onClose }) {
                 }
               >
                 {Icon && <Icon size={24} />}
-
                 <span>{item.label}</span>
               </NavLink>
             );
           })}
         </nav>
 
-        <div className={styles.bottom}>
-          <div>Fully compliant:</div>
-
-          <div className={styles.certificates}>Certificates</div>
-
-          <div className={styles.links}>
-            Terms of Use | Privacy Policy | Support
-          </div>
-
-          <div>All rights reserved © 2026</div>
-
-          <div>Ver. 1.01</div>
+        <div className={styles.footerWrapper}>
+          <Footer />
         </div>
       </aside>
     </>
   );
-}
+};
 
 export default Sidebar;

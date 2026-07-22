@@ -19,12 +19,11 @@ const CERTIFICATES = [
   },
 ];
 
-function Footer() {
+const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.complianceSection}>
         <p className={styles.compliance}>Fully compliant:</p>
-
         <div className={styles.certificates}>
           {CERTIFICATES.map(({ image, alt }) => (
             <figure key={alt} className={styles.logoWrapper}>
@@ -46,6 +45,6 @@ function Footer() {
       </div>
     </footer>
   );
-}
+};
 
 export default Footer;
