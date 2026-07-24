@@ -2,7 +2,15 @@
 
 .page {
   padding: $spacing-8;
-  background: var(--background-secondary);
+  background: var(--surface-page);
+
+  @include sm {
+    padding: $spacing-6;
+  }
+
+  @include md {
+    padding: $spacing-8;
+  }
 }
 
 .section {
@@ -10,40 +18,52 @@
 }
 
 .heading {
-  @include headingLarge;
+  @include heading-large();
 }
 
 .headingdifferentsize {
-   @include headingLarge($font-3xl);
+  @include heading-large($font-3xl);
 }
 
 .description {
-  @include text;
-
-  color: var(--text-secondary);
+  @include font(
+    $font-md,
+    $font-medium,
+    var(--text-secondary)
+  );
 }
 
 .sectionTitle {
-  @include headingSmall;
+  @include heading-small();
 
   margin-bottom: $spacing-6;
 }
 
+
+// Typography
+
 .hero {
-  @include headingLarge;
+  @include heading-large();
 }
 
 .headingSmall {
-  @include headingSmall;
+  @include heading-small();
 }
 
 .bodyText {
-  @include text;
+  @include font();
 }
 
 .smallText {
-  @include text($font-xs, $font-regular, var(--text-secondary));
+  @include font(
+    $font-xs,
+    $font-medium,
+    var(--text-secondary)
+  );
 }
+
+
+// Buttons
 
 .row {
   display: flex;
@@ -51,16 +71,25 @@
   flex-wrap: wrap;
 }
 
-/* Colors */
+
+// Colors
 
 .colorGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: $spacing-6;
+
+  @include md {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include sm {
+    grid-template-columns: 1fr;
+  }
 }
 
 .colorCard {
-  background: white;
+  background: var(--surface-primary);
   padding: $spacing-4;
   border-radius: $radius-lg;
 }
@@ -71,65 +100,87 @@
   margin-bottom: $spacing-3;
 }
 
+
+// Color Tokens
+
 .primary {
-  background: $primary;
+  background: var(--brand-primary);
 }
 
 .background {
-  background: $background-primary;
+  background: var(--surface-page);
 }
 
 .textPrimary {
-  background: $text-primary;
+  background: var(--text-primary);
 }
 
 .textSecondary {
-  background: $text-secondary;
+  background: var(--text-secondary);
 }
 
 .success {
-  background: $success;
+  background: var(--color-success);
 }
 
 .error {
-  background: $error;
+  background: var(--color-error);
 }
 
-/* Buttons */
+
+// Buttons
 
 .primaryButton {
   padding: $spacing-3 $spacing-6;
 
-  background: $primary;
+  background: var(--brand-primary);
+  color: var(--text-inverse);
 
-  color: white;
+  border: none;
+  border-radius: $radius-full;
 
-  border-radius: $radius-md;
+  @include font();
+
+  transition: $transition-base;
+
+  &:hover {
+    background: var(--brand-primary-hover);
+  }
 }
+
 
 .secondaryButton {
   padding: $spacing-3 $spacing-6;
 
-  background: $gray-200;
+  background: var(--surface-primary);
+  color: var(--brand-primary);
 
-  border-radius: $radius-md;
+  border: 1px solid var(--brand-primary);
+  border-radius: $radius-full;
+
+  @include font();
+
+  transition: $transition-base;
 }
+
 
 .dangerButton {
   padding: $spacing-3 $spacing-6;
 
-  background: $red-500;
+  background: var(--color-error);
+  color: var(--text-inverse);
 
-  color: white;
+  border: none;
+  border-radius: $radius-full;
 
-  border-radius: $radius-md;
+  @include font();
 }
 
-/* Inputs */
+
+// Inputs
 
 .form {
   display: flex;
-
   flex-direction: column;
 
   gap: $spacing-4;
@@ -137,20 +188,32 @@
   max-width: 400px;
 }
 
+
 .input,
 .inputError {
-  padding: $spacing-3;
 
-  border: $border-width-sm solid $border-primary;
+  padding: $spacing-3 $spacing-4;
+
+  border: 1px solid var(--border-default);
 
   border-radius: $radius-md;
+
+  @include font();
+
+  outline: none;
+
+  &:focus {
+    border-color: var(--border-focus);
+  }
 }
+
 
 .inputError {
-  border-color: $red-500;
+  border-color: var(--color-error);
 }
 
-/* Cards */
+
+// Cards
 
 .cardGrid {
   display: grid;
@@ -158,15 +221,26 @@
   grid-template-columns: repeat(2, 1fr);
 
   gap: $spacing-6;
+
+
+  @include sm {
+    grid-template-columns: 1fr;
+  }
 }
 
+
 .card {
-  @include card($radius-lg, $spacing-6, white);
+  @include card(
+    $radius-lg,
+    $spacing-6,
+    var(--surface-primary)
+  );
 
   box-shadow: $shadow-md;
 }
 
-/* Radius */
+
+// Radius
 
 .radiusGrid {
   display: flex;
@@ -176,21 +250,20 @@
   flex-wrap: wrap;
 }
 
+
 .radiusBox {
   width: 120px;
-
   height: 80px;
 
   display: flex;
 
   align-items: center;
-
   justify-content: center;
 
-  background: $primary;
-
-  color: white;
+  background: var(--brand-primary);
+  color: var(--text-inverse);
 }
+
 
 .radius-sm {
   border-radius: $radius-sm;
@@ -212,20 +285,34 @@
   border-radius: $radius-full;
 }
 
-/* Shadows */
+
+// Shadows
 
 .shadowGrid {
+
   display: grid;
 
   grid-template-columns: repeat(4, 1fr);
 
   gap: $spacing-6;
+
+
+  @include md {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
+  @include sm {
+    grid-template-columns: 1fr;
+  }
 }
 
+
 .shadowBox {
+
   height: 100px;
 
-  background: white;
+  background: var(--surface-primary);
 
   display: flex;
 
@@ -234,7 +321,9 @@
   justify-content: center;
 
   border-radius: $radius-lg;
+
 }
+
 
 .shadow-sm {
   box-shadow: $shadow-sm;
@@ -250,16 +339,4 @@
 
 .shadow-lg {
   box-shadow: $shadow-lg;
-}
-
-@media (max-width: 768px) {
-  .page {
-    padding: $spacing-4;
-  }
-
-  .colorGrid,
-  .cardGrid,
-  .shadowGrid {
-    grid-template-columns: 1fr;
-  }
 }

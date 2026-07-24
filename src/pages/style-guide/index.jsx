@@ -46,7 +46,7 @@ const radiusItems = [
 
 const shadowItems = ["shadow-sm", "shadow-base", "shadow-md", "shadow-lg"];
 
-function StyleGuide() {
+const StyleGuide = () => {
   return (
     <div className={styles.page}>
       <section className={styles.section}>
@@ -168,6 +168,6 @@ function StyleGuide() {
       </section>
     </div>
   );
-}
+};
 
 export default StyleGuide;

@@ -2,29 +2,33 @@
 
 .header {
   position: relative;
-  height: 5.25rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-inline: $spacing-6;
-  background: var(--bg-primary);
+  height: 5.25rem;
+  padding-inline: $spacing-4;
+  background: var(--surface-primary);
+
+  @include md {
+    padding-inline: $spacing-6;
+  }
 
   @include lg {
-    padding: $spacing-6 $spacing-8 $spacing-0 $spacing-8;
+    padding: $spacing-6 $spacing-8 $spacing-0;
   }
 }
 
 .left {
   display: flex;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .menuButton {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: none;
+  @include flex(center, center);
+  padding: 0;
   border: none;
+  background: transparent;
   cursor: pointer;
 
   @include lg {
@@ -34,11 +38,13 @@
 
 .logoWrapper {
   display: none;
+  margin: 0;
 
   @include lg {
     display: flex;
     align-items: center;
     width: 9rem;
+    flex-shrink: 0;
   }
 }
 
@@ -51,8 +57,12 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-
-  @include font($font-xl, $font-semibold, $font-body);
+  max-width: calc(100% - 8rem);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+  @include font($font-xl, $font-semibold);
 
   @include lg {
     display: none;
@@ -66,28 +76,30 @@
     display: flex;
     align-items: center;
     height: 100%;
+    min-width: 0;
   }
 }
 
 .navItem {
-  height: 100%;
   display: flex;
   align-items: center;
-  gap: 10px;
+  height: 100%;
+  gap: $spacing-2;
   padding-inline: $spacing-4;
-  text-decoration: none;
   border-bottom: 2px solid transparent;
+  text-decoration: none;
+  white-space: nowrap;
   transition: $transition-base;
   @include font($font-lg, $font-medium);
 
   &:hover {
-    color: $primary;
+    color: var(--brand-primary);
   }
 }
 
 .active {
-  color: $primary;
-  border-bottom-color: $primary;
+  color: var(--brand-primary);
+  border-bottom-color: var(--brand-primary);
 }
 
 .actions {
@@ -95,19 +107,18 @@
 
   @include lg {
     display: flex;
+    align-items: center;
     gap: $spacing-4;
+    flex-shrink: 0;
   }
 }
 
 .iconButton {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex(center, center);
+  width: $spacing-10;
+  height: $spacing-10;
+  border: 1px solid var(--border-subtle);
   border-radius: $radius-full;
-  border: 1px solid var(--gray-idle, #d3e4df);
-  background: none;
+  background: transparent;
   cursor: pointer;
 }
-

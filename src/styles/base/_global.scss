@@ -1,61 +1,73 @@
 @use "../../styles/abstracts" as *;
-@use "./typography" as *;
 
 :root {
-  // Action / Interactive Colors
+  // Brand
 
-  --primary: #{$primary};
-  --primary-hover: #{$primary-hover};
+  --brand-primary: #{$brand-primary};
+  --brand-primary-hover: #{$brand-primary-hover};
 
-  // Text Colors
+  // Text
 
-  --text-default: #{$text-default};
+  --text-primary: #{$text-primary};
+  --text-brand: #{$text-brand};
   --text-secondary: #{$text-secondary};
+  --text-muted: #{$text-muted};
+  --text-disabled: #{$text-disabled};
   --text-inverse: #{$text-inverse};
 
-  // Background Colors
+  // Surfaces
 
-  --bg-surface: #{$background-surface};
-  --bg-primary: #{$background-primary};
-  --background-secondary: #{$background-secondary};
+  --surface-page: #{$surface-page};
+  --surface-primary: #{$surface-primary};
+  --surface-secondary: #{$surface-secondary};
+  --surface-disabled: #{$surface-disabled};
 
-  // Border Colors
+  // Borders
 
-  --border-primary: #{$border-primary};
-
-  // bg default
-
-  --bg-default: #{$bg-default};
+  --border-subtle: #{$border-subtle};
   --border-default: #{$border-default};
+  --border-focus: #{$border-focus};
+
+  // Status
+
+  --color-success: #{$color-success};
+  --color-error: #{$color-error};
+  --color-warning: #{$color-warning};
+  --color-info: #{$color-info};
+
+  // Overlay
+
+  --overlay-dark: #{$overlay-dark};
+  --overlay-light: #{$overlay-light};
 }
 
 body {
   font-family: $font-body;
-  color: var(--text-default);
-  background: var(--bg-surface);
+  color: var(--text-primary);
+  background: var(--surface-page);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-// Error message
+// Error Message
 
 .errorMessage {
-  color: $red-500;
+  color: var(--color-error);
   font-size: $font-xs;
   font-weight: $font-regular;
   margin-left: $spacing-3;
   text-align: left;
 }
 
-// Common container
+// Common Container
 
 .container {
-  background: $white;
+  background: var(--surface-primary);
   border-radius: $radius-sm;
   padding: $spacing-5;
 }
 
-// Date and time inputs
+// Date and Time Inputs
 
 input[type="date"],
 input[type="time"] {
@@ -68,7 +80,7 @@ input[type="time"] {
   }
 }
 
-// Remove number arrows
+// Remove Number Arrows
 
 input[type="number"] {
   &::-webkit-inner-spin-button,

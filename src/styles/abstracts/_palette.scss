@@ -3,6 +3,20 @@
 $black: #000000;
 $white: #ffffff;
 
+// Brand Colors (From Figma)
+
+$brand-green-500: #417a69;
+$brand-green-600: #356554;
+
+// Text Colors (From Figma)
+
+$text-primary-default: #001711;
+
+// Neutral Colors (From Figma)
+
+$neutral-background: #f8f8f6;
+$neutral-border-subtle: #d3e4df;
+
 // White Alpha
 
 $white-alpha-50: rgba(255, 255, 255, 0.04);
@@ -158,39 +172,3 @@ $pink-600: #b83280;
 $pink-700: #97266d;
 $pink-800: #702459;
 $pink-900: #521b41;
-
-
-// Semantic Colors
-
-// primary Colors
-
-$primary: #417a69;
-$primary-hover: #356554;
-
-// Background
-
-$background-surface: #F8F8F6;
-$background-primary: $white;
-$background-secondary: $gray-50;
-
-// Text
-
-$text-default:  #001711;
-$text-primary: $gray-900;
-$text-secondary: $gray-600;
-$text-disabled: $gray-400;
-$text-inverse: $white;
-
-// Border
-
-$border-primary: $gray-200;
-
-// Status
-
-$success: $green-500;
-$error: $red-500;
-
-// Component Colors
-
-$bg-default: $white;
-$border-default: #d3e4df;

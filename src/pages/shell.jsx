@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { routesData } from "../routes";
 import Loader from "../components/loader";
 
-function Shell() {
+const Shell = () => {
   return (
     <>
       <Suspense fallback={<Loader />}>
@@ -12,6 +12,6 @@ function Shell() {
       </Suspense>
     </>
   );
-}
+};
 
 export default Shell;

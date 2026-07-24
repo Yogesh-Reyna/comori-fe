@@ -5,7 +5,7 @@ import Modal from "../../components/modal";
 import { testModalKey } from "../../constants/modalKeys";
 import { closeModal, openModal } from "../../zustand-store/modal-store/actions";
 
-function Dashboard() {
+const Dashboard = () => {
   const [name, setName] = useState("");
   const unusedVariable = "hello";
 
@@ -37,6 +37,6 @@ function Dashboard() {
       </Modal>
     </div>
   );
-}
+};
 
 export default Dashboard;

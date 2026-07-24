@@ -1,14 +1,11 @@
 import { NavLink, useMatches } from "react-router-dom";
-
 import styles from "./styles.module.scss";
 import logo from "../../assets/images/logo.png";
-
 import { navigationItems } from "../../constants/navigation";
-
 import { MenuIcon } from "../svg";
 import ExpandableMenu from "../expandable-menu";
 
-function Header({ onMenuClick }) {
+const Header = ({ onMenuClick }) => {
   const matches = useMatches();
 
   const currentPage =
@@ -27,14 +24,12 @@ function Header({ onMenuClick }) {
         >
           <MenuIcon />
         </button>
-
         <figure className={styles.logoWrapper}>
           <img src={logo} alt="Comori logo" className={styles.logo} />
         </figure>
       </div>
 
       <h1 className={styles.pageTitle}>{currentPage}</h1>
-
       <nav className={styles.navigation}>
         {navigationItems
           .filter((item) => !item.children)
@@ -47,7 +42,6 @@ function Header({ onMenuClick }) {
               }
             >
               <Icon size={24} />
-
               <span>{label}</span>
             </NavLink>
           ))}
@@ -67,6 +61,6 @@ function Header({ onMenuClick }) {
       </div>
     </header>
   );
-}
+};
 
 export default Header;

@@ -1,8 +1,21 @@
-@forward "colors";
-@forward "variables";
-@forward "breakpoints";
-@forward "mixins";
-@forward "helpers";
-@forward "spacings";
-@forward "radius";
-@forward "shadows";
+// Design Tokens
+
+// Colors
+@forward "./palette";
+@forward "./theme-light";
+
+// Typography
+@forward "./typography";
+
+// Layout
+@forward "./spacings";
+@forward "./radius";
+@forward "./breakpoints";
+
+// Effects
+@forward "./shadows";
+@forward "./transition";
+@forward "./z-index";
+
+// Utilities
+@forward "./mixins";

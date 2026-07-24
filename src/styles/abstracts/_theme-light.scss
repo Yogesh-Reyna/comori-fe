@@ -1,0 +1,40 @@
+@use "./palette" as *;
+
+// Brand
+
+$brand-primary: $brand-green-500;
+$brand-primary-hover: $brand-green-600;
+
+// Text
+
+$text-primary: $text-primary-default;
+$text-brand: $brand-primary;
+$text-secondary: $gray-600;
+$text-muted: $gray-500;
+$text-disabled: $gray-400;
+$text-inverse: $white;
+
+// Surfaces
+
+$surface-page: $neutral-background;
+$surface-primary: $white;
+$surface-secondary: $gray-50;
+$surface-disabled: $gray-100;
+
+// Borders
+
+$border-subtle: $neutral-border-subtle;
+$border-default: $gray-300;
+$border-focus: $brand-primary;
+
+// Status
+
+$color-success: $green-500;
+$color-error: $red-500;
+$color-warning: $yellow-500;
+$color-info: $blue-500;
+
+// Overlay
+
+$overlay-dark: $black-alpha-500;
+$overlay-light: $white-alpha-500;

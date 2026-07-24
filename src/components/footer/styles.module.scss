@@ -5,12 +5,13 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  background: var(--bg-primary);
-  border-top: $border-width-sm solid var(--border-primary);
+  background: var(--surface-primary);
+  border-top: 1px solid var(--border-default);
   gap: $spacing-4;
+  margin-top: $spacing-8;
 
   @include lg {
-    padding: $spacing-0 $spacing-6 $spacing-8;
+    padding: 0 $spacing-6 $spacing-8;
   }
 }
 
@@ -23,30 +24,32 @@
   width: 100%;
   gap: $spacing-3;
   padding: $spacing-3 $spacing-4;
-  border-bottom: 1px solid var(--border-solid, #b9d6cc);
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .compliance {
-  @include font($font-sm, $font-medium, $primary, $font-body);
+  @include font($font-sm, $font-medium, var(--brand-primary));
   text-align: center;
 }
 
 .certificates {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: $spacing-6;
 }
 
 .logoWrapper {
   width: 2.938rem;
   margin: 0;
+  flex-shrink: 0;
 }
 
 .logo {
+  display: block;
   width: 100%;
   height: auto;
-  display: block;
 }
 
 // Legal
@@ -55,19 +58,24 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
   gap: $spacing-1;
+  padding: 0 $spacing-4;
 }
 
 .links {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+  row-gap: $spacing-2;
 
   a {
-    @include font($font-sm, $font-medium, var(--primary), $font-body);
-    line-height: 20px;
+    @include font($font-sm, $font-medium, var(--brand-primary));
+    line-height: $line-height-sm;
     text-decoration: none;
     transition: $transition-base;
+    white-space: nowrap;
 
     &:hover {
       text-decoration: underline;
@@ -81,8 +89,8 @@
         content: "";
         width: 1px;
         height: 16px;
-        margin-inline: $spacing-6;
-        background: var(--border-default, #d3e4df);
+        margin-inline: $spacing-4;
+        background: var(--border-default);
       }
     }
   }
@@ -90,7 +98,7 @@
 
 .copyright,
 .version {
-  @include font($font-xs, $font-medium, var(--primary), $font-body);
-  line-height: 16px;
+  @include font($font-xs, $font-medium, var(--brand-primary));
+  line-height: $line-height-xs;
   text-align: center;
 }

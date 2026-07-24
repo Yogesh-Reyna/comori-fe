@@ -1,4 +1,2 @@
-// Base layer entrypoint
-@forward "./typography";
-@use "./reset";
-@use "./global";
+@forward "./reset";
+@forward "./global";
